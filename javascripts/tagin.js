@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$("#tagin").tagin();
+	});
+
 ;(function ($, window, document, undefined) {
 	$.fn.tagin = function (o) { // o = options
 
@@ -80,4 +84,4 @@
 	};
 })(jQuery, window, document);
 
-$("#tagin").tagin();
+
