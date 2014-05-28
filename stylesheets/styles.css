@@ -355,6 +355,7 @@ footer p + p {
   }
 }
 /* [ tagin ] */
+/*
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -367,7 +368,7 @@ body {
   width: 450px;
   margin: 20px auto;
 }
-
+*/
 span {
   display: inline-block;
   padding: 6px 30px 6px 10px;
