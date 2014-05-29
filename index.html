@@ -1,74 +1,243 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Tagin by ElmahdiMahmoud</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascripts/scale.fix.js"></script>
-    <script src="javascripts/tagin.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Tagin</h1>
-        <p>Tags Input</p>
-        <p class="view"><a href="https://github.com/ElmahdiMahmoud/tagin">View the Project on GitHub <small>ElmahdiMahmoud/tagin</small></a></p>
-        <ul>
-          <li><a href="https://github.com/ElmahdiMahmoud/tagin/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ElmahdiMahmoud/tagin/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ElmahdiMahmoud/tagin">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<input type="text" id="tagin" placeholder="Tagin" />
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>jQuery plugin for managing tags</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/tagin.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row">
+          
+            <!-- sidebar -->
+            <div class="column col-sm-3" id="sidebar">
+                <a class="logo" href="#">#tagin</a>
+                <ul class="nav">
+                    <li><a href="#default">Default</a></li>
+                    <li><a href="#maxTags">Maximum Tags</a></li>
+                    <li><a href="#backSpace">Backspace (del)</a></li>
+                    <li><a href="#editMode">Edit Mode</a></li>
+                </ul>
+				<hr/>
+                <ul class="nav">
+                    <li><a href="#info">Info</a></li>
+                    <li><a href="#bugs">Bugs</a></li>
+                    <li><a href="#license">License</a></li>
+                </ul>				
+                <ul class="nav hidden-xs" id="sidebar-footer">
+					<li>
+                      <a href="https://github.com/ElmahdiMahmoud"><h3>Tagin</h3>maintained by ElmahdiMahmoud</a>
+                    </li>
+					
+                </ul>
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main -->
+            <div class="column col-sm-9" id="main">
+                <div class="padding">
+                    <div class="full col-sm-9">
+                      <h1>Tagin</h1>
+					  <h3>jQuery plugin for managing tags</h3>
+                        <!-- content -->
+                        
+                        <div class="col-sm-12" id="featured">   
+                          <div class="page-header text-muted">
+                          Examples
+                          </div> 
+                        </div>
+                        
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3>Markup</h3>
+                            <p>
+								Set an input field <code>type="text"</code> and give it an 
+								<code>id="YOUR-ID"</code> and leave the rest on tagin!
+							</p>
+							<pre>&lt;input type="text" id="WHATEVER" placeholder="Add tags" /&gt;</pre>
+                          </div>
+                        </div>
+						
+						<hr />
+						
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3 id="default">Default</h3>
+							<p>
+								Default option: comma <code>,</code> key
+							</p>
+							<input type="text" id="ex-1" placeholder="Add tags" />
+							<pre>$("SELECTOR").tagin();</pre>
+                          </div>
+                        </div>
+						
+						<hr />
+						
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3 id="maxTags">Maximum Tags</h3>
+							<p>
+								<code>maxtag</code> option allows you to control the maximum number of tags that users can add.
+							</p>
+							<input type="text" id="ex-2" placeholder="Add tags" />
+							<pre>$("SELECTOR").tagin({ maxTags: 5 });</pre>
+                          </div>
+						  
+						  <div class="col-sm-2 text-right">
+									<br />
+									Type: <code>Number</code>
+									<br />
+									<small><strong>Default</strong>: null</small>
+                          </div> 
+                        </div>
+						
+						<hr />
+						
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3 id="backSpace">Backspace (del)</h3>
+							<p>
+								<code>backSpace</code> option remove tags. You can also use [Delete] button on your keyboard.
+							</p>
+							<input type="text" id="ex-3" placeholder="Add tags" />
+							<pre>$("SELECTOR").tagin({ backSpace: true });</pre>
+                          </div>
+						  
+						  <div class="col-sm-2 text-right">
+							<br />
+							Type: <code>Boolean</code>
+							<br />
+							<small><strong>Default</strong>: false</small>
+                          </div> 
+                        </div>
+						
+						<hr />
+						
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3 id="editMode">Edit Mode</h3>
+							<p>
+								Double click on the tag you want to edit.
+							</p>
+							<input type="text" id="ex-4" placeholder="Add tags" />
+							<pre>$("SELECTOR").tagin({ editMode: true });</pre>
+                          </div>
+						  
+						  <div class="col-sm-2 text-right">
+							<br />
+							Type: <code>Boolean</code>
+							<br />
+							<small><strong>Default</strong>: false</small>
+                          </div> 
+                        </div>
+						
+                        <div class="col-sm-12" id="featured">   
+                          <div class="page-header text-muted">
+                          History
+                          </div> 
+                        </div>
+						
+                        <div class="row">    
+                          <div class="col-sm-10">
+							<div class="panel panel-info" id="info">
+								  <div class="panel-heading">
+									<h3 class="panel-title">1.0.0</h3>
+								  </div>
+								  <div class="panel-body">
+									<strong>Initial release.</strong>
+								  </div>
+								</div>
+								
+							<div class="panel panel-warning" id="bugs">
+								  <div class="panel-heading">
+									<h3 class="panel-title">Bugs</h3>
+								  </div>
+								  <div class="panel-body">
+									<ul>
+										<li>edit mode.</li>
+									</ul>
+								  </div>
+								</div>
+								
+							<div class="well license" id="license">
+                            <h3>License</h3>
+							<p>
+								The MIT License (MIT)
+								</p>
+								<p>
+								Copyright (c) 2014 
+								</p>
+								<p>
+								Permission is hereby granted, free of charge, to any person obtaining a copy
+								of this software and associated documentation files (the "Software"), to deal
+								in the Software without restriction, including without limitation the rights
+								to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+								copies of the Software, and to permit persons to whom the Software is
+								furnished to do so, subject to the following conditions:
+								</p>
+								<p>
+								The above copyright notice and this permission notice shall be included in all
+								copies or substantial portions of the Software.
+								</p>
+								<p>
+								THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+								IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+								FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+								AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+								LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+								OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+								SOFTWARE.
+							</p>
+							</div>
+                          </div>
+                        </div>
+						
+						<hr />
+						
+                      
+                        <div class="row hidden" id="footer">    
+                          <div class="col-sm-12">
+                            <p>
+                            <a href="https://github.com/ElmahdiMahmoud/tagin/blob/master/LICENSE" class="pull-right">The MIT License (MIT) Copyright (c) 2014 </a>
+                            </p>
+                          </div>
+                        </div>
+                      
+                      <hr>
+                      
+                      <h3 class="text-center">
+                      <a href="http://bootply.com/86704" target="ext">Download #tagin</a>
+                      </h3>
+                        
+                      <hr>
+                        
+                      
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+          
+        </div>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/ElmahdiMahmoud">ElmahdiMahmoud</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+</div>
+	<!-- script references -->
+		<script src="http://code.jquery.com/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/tagin.js"></script>
+		<script>
+		$(document).ready(function(){
+			$("#ex-1").tagin();
+			$("#ex-2").tagin({ maxTags: 5 });
+			$("#ex-3").tagin({ backSpace: true });
+			$("#ex-4").tagin({ editMode: true });
+		});
+		</script>
+	</body>
 </html>
